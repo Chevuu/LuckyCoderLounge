@@ -1,0 +1,22 @@
+## client
+
+
+################################
+## server
+
+# authentication
+
+
+# slot
+
+
+# technologies
+
+
+# user-info
+# Ignore the node_modules directory within the user-info microservice
+server/user-info/node_modules
+
+# Ignore environment configuration files (store sensitive data like API keys here)
+.env
+
