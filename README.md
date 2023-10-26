@@ -1,2 +1,5 @@
 # LuckyCoderLounge
 LuckyCoderLounge is a virtual casino and gaming platform designed for developers to explore and experiment with the principles of betting and games of chance.
+
+## Description
+LuckyCoderLounge is a unique and creative project that serves two fascinating purposes: guiding coders in selecting technologies for their next project and providing an entertaining slot machine experience. This application empowers developers to choose their project's tech stack by selecting the type of project they want to work on, then spinning the virtual slot machine. Instead of traditional slot symbols, the machine displays programming languages, databases, frameworks, IDEs, and more. It's a playful and educational way to make technology decisions for your coding endeavors. Plus, with a vision for future expansion, TechDecisionSpinner is designed to seamlessly transition into a real-world slot application if desired. Whether you're seeking coding inspiration or just a bit of fun, this project combines the best of both worlds. Discover your next tech adventure with a spin!
