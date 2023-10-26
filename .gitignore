@@ -1,11 +1,12 @@
 ## client
+client/node_modules
 
 
 ################################
 ## server
 
 # authentication
-
+server/authentication/node_modules
 
 # slot
 
