@@ -1,0 +1,73 @@
+.create-account-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  width: 80%; /* Adjust the width to your preference */
+  background-color: #fff;
+  border-radius: 10px; /* Rounded edges */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Drop shadow */
+  margin: auto; /* Center the form horizontally */
+}
+
+.create-account-form input {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.create-account-form button {
+  background-color: #0074cc;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.create-account-form button:hover {
+  background-color: #005aa3;
+}
+
+.log-in-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  width: 80%; /* Adjust the width to your preference */
+  background-color: #fff;
+  border-radius: 10px; /* Rounded edges */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Drop shadow */
+  margin: auto; /* Center the form horizontally */
+}
+
+.log-in-form input {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.log-in-form button {
+  background-color: #0074cc;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.log-in-form button:hover {
+  background-color: #005aa3;
+}
