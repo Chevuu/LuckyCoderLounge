@@ -24,5 +24,5 @@ The User Management Microservice is a Node.js application that serves as a gatew
 - **Description**: Retrieve a user by their unique user ID.
 - **Response**: If a user with the specified ID exists in the database, the microservice responds with the user's information in JSON format. If the user does not exist, a 404 status code is returned with an error message.
 ## Usage
-To use the User Management Microservice, send HTTP requests to the specified endpoints using any tool capable of making HTTP requests (e.g., Postman, cURL) or by integrating it with your application. To run this service you can run `node app.js`
+To use the User Management Microservice, send HTTP requests to the specified endpoints using any tool capable of making HTTP requests (e.g., Postman, cURL) or by integrating it with your application. To run this service you can run `node app.js``
 

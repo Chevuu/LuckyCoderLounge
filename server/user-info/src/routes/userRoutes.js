@@ -8,4 +8,10 @@ router.post('/add', userController.addUser);
 // Define the route for getting a user by ID
 router.get('/:userId', userController.getUserById);
 
+// Define the route for editing user fields
+router.patch('/:userId/edit', userController.editUser);
+
+// Define the route for deleting a user by userID
+router.delete('/:userId/delete', userController.deleteUser);
+
 module.exports = router;
