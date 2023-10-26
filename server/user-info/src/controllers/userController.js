@@ -1,13 +1,15 @@
 const { UserModel, CoinXPModel } = require('../models/userModel');
 
 // Controller function for adding a new user
-// Controller function for adding a new user
 async function addUser(req, res) {
   try {
+    console.log('addUser called'); // Add a log to show that the function was called
+
     // Find the maximum existing userID and increment it by one
     const latestUser = await UserModel.findOne().sort({ userID: -1 });
 
     const newUserID = latestUser ? latestUser.userID + 1 : 1;
+    console.log('New User ID:', newUserID); // Log the new user ID
 
     // Create a new user based on the request data
     const newUser = new UserModel({
@@ -31,8 +33,12 @@ async function addUser(req, res) {
     await newUser.save();
     await newCoinXP.save();
 
-    res.status(201).send(newUser);
+    console.log('User and CoinXP entry saved successfully'); // Log a success message
+
+    // Respond with the newly created user's userID
+    res.status(201).send({ userID: newUserID });
   } catch (error) {
+    console.error('An error occurred in addUser:', error); // Log the error
     res.status(400).send(error);
   }
 }

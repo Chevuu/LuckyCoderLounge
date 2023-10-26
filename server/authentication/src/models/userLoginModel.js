@@ -7,3 +7,5 @@ const userSchema = new mongoose.Schema({
   });
 
 const UserLoginModel = mongoose.model('User-Login', userSchema);
+
+module.exports = { UserLoginModel };

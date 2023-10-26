@@ -122,8 +122,8 @@ async function startApp() {
 
 // startAppGetUser1();
 
-startAppAddUser1();
+// startAppAddUser1();
 
 // startApp().then(getTheUserByAPI());
 
-// startApp();
+startApp();
