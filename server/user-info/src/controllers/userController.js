@@ -3,15 +3,10 @@ const { UserModel, CoinXPModel } = require('../models/userModel');
 // Controller function for adding a new user
 async function addUser(req, res) {
   try {
-    console.log('addUser called'); // Add a log to show that the function was called
-
-    // Find the maximum existing userID and increment it by one
     const latestUser = await UserModel.findOne().sort({ userID: -1 });
 
     const newUserID = latestUser ? latestUser.userID + 1 : 1;
-    console.log('New User ID:', newUserID); // Log the new user ID
 
-    // Create a new user based on the request data
     const newUser = new UserModel({
       userID: newUserID,
       name: req.body.name,
@@ -22,27 +17,25 @@ async function addUser(req, res) {
       language: req.body.language,
     });
 
-    // Create a corresponding entry in the coinXP table
     const newCoinXP = new CoinXPModel({
       userID: newUserID,
       coinCount: 500,
       xpCount: 0,
     });
 
-    // Save both the new user and the corresponding coinXP entry to the database
     await newUser.save();
     await newCoinXP.save();
 
-    console.log('User and CoinXP entry saved successfully'); // Log a success message
+    console.log("Created new user: " + newUser);
 
-    // Respond with the newly created user's userID
-    res.status(201).send({ userID: newUserID });
+    res.status(201).json({ userID: newUserID });
   } catch (error) {
-    console.error('An error occurred in addUser:', error); // Log the error
+    console.error('An error occurred in addUser:', error);
     res.status(400).send(error);
   }
 }
 
+// Controller function for getting a user by Id
 async function getUserById(req, res) {
   const userId = req.params.userId;
 
@@ -91,12 +84,17 @@ async function deleteUser(req, res) {
 
   try {
     const deletedUser = await UserModel.findOneAndDelete({ userID: userId });
+    const deletedUserCoinXP = await CoinXPModel.findOneAndDelete({ userID: userId });
 
     if (!deletedUser) {
       return res.status(404).send({ error: 'User not found' });
     }
 
-    res.status(204).send(); // No content response for successful deletion
+    if (!deletedUserCoinXP) {
+      return res.status(404).send({ error: 'UserCoinXP not found' });
+    }
+
+    res.status(204).send();
   } catch (error) {
     console.error('Error deleting user:', error);
     res.status(500).send(error);
