@@ -19,7 +19,6 @@ function CreateAccountLogIn() {
 
   const [errors, setErrors] = useState({});
   const [success, setSuccess] = useState(null);
-  const [userID, setUserID] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -92,7 +91,6 @@ function CreateAccountLogIn() {
 
         if (createAccountResponse.ok) {
           const data = await createAccountResponse.json();
-          setUserID(data.userID);
           setSuccess("User created successfully with userID: " + data.userID);
           console.log("User created successfully with userID: " + data.userID);
 
