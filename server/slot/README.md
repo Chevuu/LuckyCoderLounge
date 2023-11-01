@@ -1,0 +1,1 @@
+Service used for playing the slot

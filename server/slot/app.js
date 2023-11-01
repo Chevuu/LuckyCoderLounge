@@ -2,9 +2,7 @@ const express = require("express");
 const app = express();
 const db = require("./db");
 const cors = require("cors");
-
-// Import the userRoutes module
-const userRoutes = require("./src/routes/userRoutes");
+const slotRoutes = require("./src/routes/slotRoutes");
 
 async function startApp() {
   try {
@@ -15,11 +13,11 @@ async function startApp() {
     // Middleware and other configurations
     app.use(express.json());
 
-    // Use the user routes defined in userRoutes.js
-    app.use("/api/users", userRoutes);
+    // Use the slot routes defined in slotRoutes.js
+    app.use("/api/slot", slotRoutes);
 
     // Start the server
-    const port = process.env.PORT || 3000;
+    const port = process.env.PORT || 3002;
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
     });

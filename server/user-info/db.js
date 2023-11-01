@@ -4,7 +4,7 @@ require('dotenv').config();
 const dbURL = `mongodb+srv://vukjurisic:${process.env.MONGODB_PASSWORD}@luckycoderdb.lowhwqo.mongodb.net/?retryWrites=true&w=majority`;
 
 // Connect to the MongoDB database
-mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(dbURL);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));

@@ -9,7 +9,7 @@ client/node_modules
 server/authentication/node_modules
 
 # slot
-
+server/slot/node_modules
 
 # technologies
 
