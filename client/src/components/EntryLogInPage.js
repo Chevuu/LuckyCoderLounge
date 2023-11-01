@@ -10,21 +10,23 @@ function EntryLogInPage() {
 
   return (
     <div className="landing-page">
-      <h1>Welcome to Lucky Coder Lounge</h1>
+      <h1>Welcome to Lucky Lounge</h1>
       <div className="buttons">
-        <button className="login-button" onClick={() => {
+        <button className="start-screen-button" onClick={() => {
           setShowLogIn(true);
           setShowCreateAccount(false);
         }}>
           Log In
         </button>
-        <button className="create-account-button" onClick={() => {
+        <button className="start-screen-button" onClick={() => {
           setShowLogIn(false);
           setShowCreateAccount(true);
         }}>
           Create Account
         </button>
-        <Link to="/slot-machine">Go to Slot Machine</Link> {/* Add this Link */}
+        <Link className="start-screen-button" to="/slot-machine"  style={{ textDecoration: 'none' }}>
+          Go to Slot Machine
+        </Link>
       </div>
       {showCreateAccount && <CreateAccount />}
       {showLogIn && <LogIn />}
