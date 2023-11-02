@@ -37,10 +37,16 @@ function SlotMachinePage() {
 
   // Function to check if a specific slot is part of the winning slots
   const isWinningSlot = (rowIndex, columnIndex) => {
-    for (const winningSlot of winningSlots) {
-      for (const [x, y] of winningSlot.slots) {
-        if (x === rowIndex && y === columnIndex && y < winningSlot.multiplier) {
-          return true;
+    if (!isSpinning) {
+      for (const winningSlot of winningSlots) {
+        for (const [x, y] of winningSlot.slots) {
+          if (
+            x === rowIndex &&
+            y === columnIndex &&
+            y < winningSlot.multiplier
+          ) {
+            return true;
+          }
         }
       }
     }
