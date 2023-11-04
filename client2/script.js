@@ -1,19 +1,15 @@
 const spinButton = document.getElementById("spin-button");
-const numSlots = 99;
+const numSlots = 75;
 const slotsContainers = document.querySelectorAll(".slots-container");
 
 function generateAndAppendSlotItems(
   slotsContainer,
   numSlots,
-  num48,
-  num49,
-  num50,
+  num36,
+  num37,
+  num38,
   numOfSlotsContainer
 ) {
-  console.log("Number of slots container is: ", numOfSlotsContainer + 1);
-  console.log("num48:", num48);
-  console.log("num49:", num49);
-  console.log("num50:", num50);
   slotsContainer.innerHTML = "";
   
   const slotItems = []; // Create a separate slotItems array for each container
@@ -21,12 +17,12 @@ function generateAndAppendSlotItems(
   for (let i = 0; i < numSlots; i++) {
     const slotItem = document.createElement("div");
     slotItem.classList.add("slot-item");
-    if (i === 48) {
-      slotItem.textContent = num48;
-    } else if (i === 49) {
-      slotItem.textContent = num49;
-    } else if (i === 50) {
-      slotItem.textContent = num50;
+    if (i === 36) {
+      slotItem.textContent = num36;
+    } else if (i === 37) {
+      slotItem.textContent = num37;
+    } else if (i === 38) {
+      slotItem.textContent = num38;
     } else {
       slotItem.textContent = Math.floor(Math.random() * 8) + 1;
     }
@@ -64,11 +60,11 @@ spinButton.addEventListener("click", () => {
         
         setTimeout(() => {
           slotItems.forEach((slotItem, i) => {
-            if (i === 96) num1 = slotItem.textContent;
-            if (i === 97) num2 = slotItem.textContent;
-            if (i === 98) num3 = slotItem.textContent;
+            if (i === 72) num1 = slotItem.textContent;
+            if (i === 73) num2 = slotItem.textContent;
+            if (i === 74) num3 = slotItem.textContent;
             setTimeout(() => {
-              slotItem.style.transform = `translateY(-${48 * 70}px)`;
+              slotItem.style.transform = `translateY(-${36 * 70}px)`;
             });
           });
   

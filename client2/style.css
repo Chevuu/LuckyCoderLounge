@@ -1,48 +1,65 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #4c4c4c; /* Light gray background */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .slot-machine {
-    background-color: wheat;
-    display: flex;
-    flex-direction: row; /* Display slots-containers horizontally */
-    align-items: center;
-    justify-content: space-between; /* Distribute slots-containers evenly */
-    border: 5px solid yellow;
-    height: 210px;
-    width: 40%; /* Make the slot machine 50% wide */
-  }
-  
-  .slots-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 20%; /* Make each slots-container 10% wide */
-    height: 100%;
-    overflow: hidden;
-  }
-  
-
-.slot-item {
-    width: 100%;
-    height: 70px;
-    text-align: center;
-    line-height: 70px;
-    font-size: 24px;
-    transition: transform 3s ease; /* Transition for smooth animation */
+  background-color: #333; /* Dark background color */
+  display: flex;
+  flex-direction: row; /* Display slots-containers horizontally */
+  align-items: center;
+  justify-content: space-between; /* Distribute slots-containers evenly */
+  border: 11px solid #252525; /* Yellow border */
+  border-radius: 15px; /* Rounded corners */
+  height: 210px;
+  width: 70%; /* Make the slot machine 50% wide */
 }
 
+.slots-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20%; /* Make each slots-container 10% wide */
+  height: 100%;
+  overflow: hidden;
+}
+
+.slot-item {
+  width: 99%;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  font-size: 24px;
+  transition: transform 3s ease; /* Transition for smooth animation */
+  background-color: #ffcc00; /* Blue background color */
+  color: #252525;
+  border-left: 1px solid #252525; /* Yellow border */
+  border-right: 1px solid #252525; /* Yellow border */
+}
+
+
+
 #spin-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: blue;
-    color: white;
-    border: none;
-    cursor: pointer;
+  padding: 20px 40px;
+  background-color: #ffcc00;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 10px;
 }
