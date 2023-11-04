@@ -1,0 +1,92 @@
+/* SlotMachine.css */
+.slot-machine {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box; /* Include border in width/height calculations */
+  position: relative; /* Add this line */
+}
+
+/* Rest of your CSS remains the same */
+
+.machine {
+  border: 2px solid #000; /* Add a border around the machine */
+  width: fit-content; /* Adjust the width to fit the content */
+  border-top: 2px solid #000; /* Remove the top border */
+  border-left: 2px solid #000; /* Remove the left border */
+  border-right: none; /* Remove the left border */
+  display: flex;
+  flex-direction: row; /* Keep horizontal layout for rows */
+}
+
+.row {
+  display: flex;
+  border-bottom: 2px solid #000; /* Add a border on the bottom for each row */
+  height: 100%; /* Distribute the height evenly among the rows */
+  flex-direction: row; /* Change to horizontal layout */
+}
+
+.column {
+  width: 160px;
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-right: 2px solid #333; /* Add a border on the right for each column */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Change to vertical layout for columns */
+}
+
+.spin-button {
+  background-color: #FF4136;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.symbol img {
+  max-width: 100%;
+  border: 1px solid #2a2a00bb;
+  border-radius: 10px;
+}
+
+@keyframes spinUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+}
+
+.coin-count {
+  margin-bottom: 5px; /* Add space between coin count and XP count */
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.xp-count {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.winning-slot img {
+  background-color: rgba(116, 116, 0, 0.81); /* You can change the color to gold or any other desired color */
+}
