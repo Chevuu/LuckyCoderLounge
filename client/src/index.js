@@ -4,6 +4,7 @@ import "./index.css";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"; // Import Navigate
 import EntryLogInPage from "./components/EntryLogInPage";
 import SlotMachinePage from "./components/SlotMachine";
+import SlotMachine from "./components/LuckySlotMachine";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <Routes>
         <Route path="/login" element={<EntryLogInPage />} />
         <Route path="/slot-machine" element={<SlotMachinePage />} />
-        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/second-slot-machine" element={<SlotMachine numberOfSlots={8} />} />
+        <Route path="/" element={<Navigate to="/second-slot-machine" />} />
       </Routes>
     </Router>
   );

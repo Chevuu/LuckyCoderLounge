@@ -62,3 +62,19 @@ export function generateOneFullLineGrid(rows, columns, symbols, num) {
     return initialGrid;
   }
   
+
+  export function generateInitialGrid(rows, columns, symbols) {
+    const initialGrid = [];
+
+    for (let i = 0; i < rows; i++) {
+      const row = [];
+      for (let j = 0; j < columns; j++) {
+        const randomSymbol =
+          symbols[Math.floor(Math.random() * symbols.length)];
+        row.push(randomSymbol);
+      }
+      initialGrid.push(row);
+    }
+
+    return initialGrid;
+  }

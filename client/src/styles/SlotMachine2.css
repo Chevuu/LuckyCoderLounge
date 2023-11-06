@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  background-color: #333; /* Dark background color */
+}
+
+.slot-machine-container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 20px;
+}
+
+.slot-column {
+  height: 526px;
+  overflow: hidden;
+  width: 174px;
+  display: flex;
+  flex-direction: column; /* Display slots vertically */
+  align-items: center; /* Center slots horizontally */
+}
+
+.spin-button {
+  background-color: #555; /* Button background color */
+  color: white; /* Button text color */
+  width: 120px;
+  text-align: center;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px auto; /* Center the button horizontally */
+  cursor: pointer;
+}
+
+.slot {
+  border: 2px solid #777; /* Border color for each slot */
+  width: 170px;
+  min-height: 170px;
+  display: flex;
+  justify-content: center;
+  margin: 1px 0;
+  transition: transform 1s ease;
+}

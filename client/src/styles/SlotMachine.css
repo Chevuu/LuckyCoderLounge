@@ -90,3 +90,7 @@ h1 {
 .winning-slot img {
   background-color: rgba(116, 116, 0, 0.81); /* You can change the color to gold or any other desired color */
 }
+
+.bet-option {
+  margin-bottom: 10px;
+}

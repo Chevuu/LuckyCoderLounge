@@ -1,41 +1,19 @@
 import React, { useState } from "react";
 import "../styles/SlotMachine.css";
 import { checkForWinningCombination } from "../machine-logic/SlotMachineLogic";
-import { generateOneFullLineGrid } from "../machine-logic/GridGeneration";
+import { generateInitialGrid, generateOneFullLineGrid } from "../machine-logic/GridGeneration";
 
 function SlotMachinePage() {
   const symbols = Array.from({ length: 9 }, (_, i) => `img${i + 1}.png`);
-  const rows = 3; // Number of rows
-  const columns = 5; // Number of columns
+  const rows = 3;
+  const columns = 5;
 
-  const [grid, setGrid] = useState(generateInitialGrid());
+  const [grid, setGrid] = useState(generateInitialGrid(rows, columns, symbols));
   const [isSpinning, setIsSpinning] = useState(false);
   const [coinCount, setCoinCount] = useState(0);
   const [winningSlots, setWinningSlots] = useState([]);
-  // const [xpCount, setXpCount] = useState(0);
-  const [betValue, setBetValue] = useState(20); // Default bet value
-  const [winningLines, setWinningLines] = useState(5); // Default number of winning lines
+  const [betValue, setBetValue] = useState(20);
 
-  // Function to fetch coin and XP data
-  // const fetchUserData = async () => {
-  //   try {
-  //     const response = await fetch("http://localhost:3002/api/slot/1");
-  //     if (response.ok) {
-  //       const userData = await response.json();
-  //       setCoinCount(userData.coinCount);
-  //       setXpCount(userData.xpCount);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error fetching user data", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   // Fetch user data on component mount
-  //   fetchUserData();
-  // }, []);
-
-  // Function to check if a specific slot is part of the winning slots
   const isWinningSlot = (rowIndex, columnIndex) => {
     if (!isSpinning) {
       for (const winningSlot of winningSlots) {
@@ -51,36 +29,6 @@ function SlotMachinePage() {
       }
     }
     return false;
-  };
-
-  function generateInitialGrid() {
-    const initialGrid = [];
-
-    for (let i = 0; i < rows; i++) {
-      const row = [];
-      for (let j = 0; j < columns; j++) {
-        const randomSymbol =
-          symbols[Math.floor(Math.random() * symbols.length)];
-        row.push(randomSymbol);
-      }
-      initialGrid.push(row);
-    }
-
-    return initialGrid;
-  }
-
-  // Function to handle changes in winning lines selection
-  const handleWinningLinesChange = (newWinningLines) => {
-    setWinningLines(newWinningLines);
-
-    // Adjust the bet value accordingly (increase by a factor of 5)
-    if (newWinningLines === 10) {
-      setBetValue(betValue * 5);
-    }
-
-    if (newWinningLines === 5) {
-      setBetValue(betValue / 5);
-    }
   };
 
   const spinColumns = () => {
@@ -116,8 +64,7 @@ function SlotMachinePage() {
             // Check for winnings and update user data
             const result = checkForWinningCombination(
               newGrid,
-              betValue,
-              winningLines
+              betValue
             );
             const prize = result.totalMultiplier;
             const updatedCoinCount = coinCount + prize - betValue;
@@ -145,10 +92,6 @@ function SlotMachinePage() {
         <span role="img" aria-label="coin" className="coin-count">
           🪙 {coinCount}
         </span>
-        <span role="img" aria-label="XP" className="xp-count">
-          {/* xp count */}
-          <strong>XP</strong>: {0}
-        </span>
       </h1>
       <div className="options">
         <div className="bet-option">
@@ -166,17 +109,6 @@ function SlotMachinePage() {
             <option value={1000}>1000</option>
             <option value={2000}>2000</option>
             <option value={5000}>5000</option>
-          </select>
-        </div>
-        <div className="winning-lines-option">
-          <label htmlFor="winningLines">Winning Lines:</label>
-          <select
-            id="winningLines"
-            value={winningLines}
-            onChange={(e) => handleWinningLinesChange(parseInt(e.target.value))}
-          >
-            <option value={5}>5</option>
-            <option value={10}>10</option>
           </select>
         </div>
       </div>
