@@ -10,9 +10,6 @@ export function checkForWinningCombination(grid, betValue, winningLineCount) {
       [[0, 2], [1, 1], [2, 0], [3, 1], [4, 2]],
     ];
   }
-
-  // logGrid(grid);
-
   const winningLineInfo = [];
 
   for (const line of winningLines) {
@@ -39,18 +36,3 @@ export function checkForWinningCombination(grid, betValue, winningLineCount) {
   console.log("Final multiplier: " + multiplier);
   return { totalMultiplier: betValue * multiplier, winningLines: winningLineInfo };
 }
-
-// function logGrid(grid) {
-//   console.log("Grid shape:");
-//   for (let i = 0; i < grid.length; i++) {
-//     let rowString = "| ";
-//     for (let j = 0; j < grid[i].length; j++) {
-//       rowString += grid[i][j] + "," + i + "," + j;
-//       if (j < grid[i].length - 1) {
-//         rowString += " | ";
-//       }
-//     }
-//     rowString += " |";
-//     console.log(rowString);
-//   }
-// }
